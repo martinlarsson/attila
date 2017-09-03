@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ SITENAME }} - Articles in the {{ category }} category{% endblock %}
+{% block title %}{{ SITENAME }} - Inlägg i kategorien {{ category }} {% endblock %}
 
 {% block header %}
     <!-- Page Header -->
@@ -10,21 +10,21 @@
         <nav id="navigation">
           {% if SITE_LOGO %}
             <span class="blog-logo">
-                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
+                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Logotyp" /></a>
             </span>
           {% else %}
             <span id="home-button" class="nav-button">
-                <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+                <a class="home-button" href="{{ SITEURL }}/" title="Hem"><i class="ic ic-arrow-left"></i> Hem</a>
             </span>
           {% endif %}
           <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+            <a class="menu-button"><i class="ic ic-menu"></i> Meny</a>
           </span>
         </nav>
-        <h1 class="post-title">Category {{ category }}</h1>
-        <span class="blog-description">Posts: {{ articles|count }}</span>
+        <h1 class="post-title">Kategori {{ category }}</h1>
+        <span class="blog-description">Inlägg: {{ articles|count }}</span>
         {% if HEADER_COVER %}
-            <div class="blog-cover cover" style="background-image: url('{{ HEADER_COVER }}')">            
+            <div class="blog-cover cover" style="background-image: url('{{ HEADER_COVER }}')">
         {% elif HEADER_COLOR %}
             <div class="post-cover cover" style="background-color: {{ HEADER_COLOR }}">
         {% else %}

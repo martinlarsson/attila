@@ -65,15 +65,15 @@
         <nav id="navigation">
           {% if SITE_LOGO %}
             <span class="blog-logo">
-                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
+                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Logotyp" /></a>
             </span>
           {% else %}
             <span id="home-button" class="nav-button">
-                <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+                <a class="home-button" href="{{ SITEURL }}/" title="Hem"><i class="ic ic-arrow-left"></i> Hem</a>
             </span>
           {% endif %}
           <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+            <a class="menu-button"><i class="ic ic-menu"></i> Meny</a>
           </span>
         </nav>
         <h1 class="post-title">{{ article.title }}</h1>
@@ -89,7 +89,7 @@
         </span>
         <!-- TODO : Modified check -->
         {% if article.modified %}
-            <span class="post-meta"> | Updated on {{ article.locale_modified }}</span>
+            <span class="post-meta"> | Uppdaterad {{ article.locale_modified }}</span>
         {% endif %}
         {% if default_cover %}
             <div class="post-cover cover" style="background-image: url('{{ default_cover }}')">
@@ -119,9 +119,6 @@
                     </a>
                     <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
-                    </a>
-                    <a class="googleplus" href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
                     </a>
                     <div class="clear"></div>
                 </div>
@@ -159,7 +156,7 @@
                             <span class="post-author-location"><i class="ic ic-location"></i> {{AUTHORS_BIO[author.name.lower()].location}}</span>
                         {% endif %}
                         {% if AUTHORS_BIO[author.name.lower()].website %}
-                            <span class="post-author-website"><a href="{{AUTHORS_BIO[author.name.lower()].website}}"><i class="ic ic-link"></i> Website</a></span>
+                            <span class="post-author-website"><a href="{{AUTHORS_BIO[author.name.lower()].website}}"><i class="ic ic-link"></i> Webbplats</a></span>
                         {% endif %}
                         {% if AUTHORS_BIO[author.name.lower()].twitter %}
                             <span class="post-author-twitter"><a target="_blank" href="https://twitter.com/{{AUTHORS_BIO[author.name.lower()].twitter}}"><i class="ic ic-twitter"></i> Twitter</a></span>

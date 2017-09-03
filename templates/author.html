@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ SITENAME }} - Articles by {{ author }}{% endblock %}
+{% block title %}{{ SITENAME }} - Inlägg av {{ author }}{% endblock %}
 
 <!-- To support both image in relative path and url  -->
 {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
@@ -16,7 +16,7 @@
 
 {% block opengraph %}
     {{ super() }}
-    <meta property="og:title" content="{{ SITENAME }} - Articles by {{ author }}">
+    <meta property="og:title" content="{{ SITENAME }} - Inlägg av {{ author }}">
     <meta property="og:type" content="profile">
     <meta property="profile:first_name" content="{{ author.name.split(' ')[0] }}">
     <meta property="profile:last_name" content="{{ author.name.split(' ')[1:]|join(' ') }}">
@@ -31,15 +31,15 @@
         <nav id="navigation">
           {% if SITE_LOGO %}
             <span class="blog-logo">
-                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
+                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Logotyp" /></a>
             </span>
           {% else %}
             <span id="home-button" class="nav-button">
-                <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+                <a class="home-button" href="{{ SITEURL }}/" title="Hem"><i class="ic ic-arrow-left"></i> Hem</a>
             </span>
           {% endif %}
           <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+            <a class="menu-button"><i class="ic ic-menu"></i> Meny</a>
           </span>
         </nav>
         {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
@@ -74,7 +74,7 @@
                         <span class="post-author-location"><i class="ic ic-location"></i> {{AUTHORS_BIO[author.name.lower()].location}}</span>
                     {% endif %}
                     {% if AUTHORS_BIO[author.name.lower()].website %}
-                        <span class="post-author-website"><a href="{{AUTHORS_BIO[author.name.lower()].website}}"><i class="ic ic-link"></i> Website</a></span>
+                        <span class="post-author-website"><a href="{{AUTHORS_BIO[author.name.lower()].website}}"><i class="ic ic-link"></i> Webbplats</a></span>
                     {% endif %}
                     {% if AUTHORS_BIO[author.name.lower()].twitter %}
                         <span class="post-author-twitter"><a target="_blank" href="https://twitter.com/{{AUTHORS_BIO[author.name.lower()].twitter}}"><i class="ic ic-twitter"></i> Twitter</a></span>
@@ -82,7 +82,7 @@
                     {% if AUTHORS_BIO[author.name.lower()].facebook %}
                         <span class="post-author-facebook"><a target="_blank" href="https://facebook.com/{{AUTHORS_BIO[author.name.lower()].facebook}}"><i class="ic ic-facebook"></i> Facebook</a></span>
                     {% endif %}
-                        <span class="post-author-stats"><i class="ic ic-posts"></i> {{ articles|count }} {% if articles|count > 1 %} posts {% else %} post {% endif %}</span>
+                        <span class="post-author-stats"><i class="ic ic-posts"></i> {{ articles|count }} {% if articles|count > 1 %} inlägg {% else %} inlägg {% endif %}</span>
                 </div>
                 <div class="clear"></div>
             </aside>
